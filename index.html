@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Temiloluwa Awoyele – Data Platform Engineer</title>
+<meta name="description" content="Data engineer building CDC, streaming and analytics platforms with Kafka, Debezium, Apache Doris and Snowflake.">
+<meta property="og:title" content="Temiloluwa Awoyele – Data Platform Engineer">
+<meta property="og:description" content="CDC, streaming and analytics platforms for telecom and eSIM data.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EDF1F4;--surface:#fff;--ink:#14212B;--muted:#4A5C69;--line:#C6D1D9;--accent:#2447D6;--pulse:#D99A12;--hl:#FFF1C2;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1A22;--surface:#17252F;--ink:#E7EEF3;--muted:#9FB1BE;--line:#2A3B47;--accent:#8FA8FF;--pulse:#F0B93A;--hl:#3A3114;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1A22;--surface:#17252F;--ink:#E7EEF3;--muted:#9FB1BE;--line:#2A3B47;--accent:#8FA8FF;--pulse:#F0B93A;--hl:#3A3114;color-scheme:dark}
+html{scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "IBM Plex Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;line-height:1.12;margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 clamp(18px,4vw,32px)}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;justify-content:space-between;align-items:center;min-height:112px;padding-top:20px;padding-bottom:20px;gap:28px}
+.brand{display:flex;align-items:center;gap:16px;min-width:0}
+.brand-photo{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid var(--line);background:var(--surface)}
+.brand-text{display:flex;flex-direction:column;min-width:0;gap:4px}
+.brand-text b{font-family:"Bricolage Grotesque",sans-serif;font-size:24px;line-height:1.05;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand-text span{font-size:16px;line-height:1.25;color:var(--accent);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+nav{display:flex;gap:clamp(10px,2.5vw,24px);overflow-x:auto}
+nav a{color:var(--ink);text-decoration:none;font-size:15px;white-space:nowrap}
+nav a:hover{color:var(--accent)}
+section{padding:72px 0 0}
+h2{font-size:clamp(28px,4vw,38px);margin-bottom:12px}
+.lead{color:var(--muted);max-width:62ch;margin:0 0 28px}
+.hero{padding-top:64px}
+h1{font-size:clamp(36px,6.4vw,66px);font-weight:700;max-width:16ch;letter-spacing:-.02em}
+.hero p{max-width:60ch;color:var(--muted);font-size:19px;margin:20px 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;border:1.5px solid var(--accent);background:none;color:var(--accent);font:500 16px "IBM Plex Sans",sans-serif;text-decoration:none;cursor:pointer}
+.btn.pri{background:var(--accent);color:var(--bg)}
+.flow{list-style:none;display:flex;gap:16px;padding:0;margin:48px 0 10px}
+.flow li{flex:1;position:relative;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;font-weight:500;font-size:15px;line-height:1.35}
+.flow li small{display:block;color:var(--muted);font-weight:400;font-size:13px;margin-top:2px}
+.flow li:not(:last-child)::after{content:"";position:absolute;left:100%;top:50%;width:16px;height:2px;background:linear-gradient(90deg,var(--line) 35%,var(--pulse) 50%,var(--line) 65%) 0 0/300% 100%;animation:pulse 2.4s linear infinite}
+@keyframes pulse{to{background-position:-300% 0}}
+.cap{font-size:14px;color:var(--muted);max-width:70ch;margin:0}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}
+.card h3{font-size:21px;margin-bottom:8px}
+.card p{margin:0;color:var(--muted);font-size:16px}
+.fig{font:700 38px/1.1 "Bricolage Grotesque",sans-serif;margin-bottom:10px}
+.ph{background:var(--hl);border-bottom:2px dotted var(--pulse);padding:0 3px;border-radius:3px}
+.stack{display:grid;gap:0;border-top:1px solid var(--line)}
+.stack div{display:grid;grid-template-columns:200px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.stack dt{font-weight:500}
+.stack dd{margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px 13px;font-size:15px}
+.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+.tl li{position:relative;padding-bottom:26px}
+.tl li::before{content:"";position:absolute;left:-29px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.tl b{font-size:18px}.tl span{display:block;color:var(--muted);font-size:15px}
+.proj{display:grid;gap:14px}
+.proj article{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:12px 32px}
+.proj h3{grid-column:1/-1;font-size:23px}
+.proj h4{margin:0 0 2px;font-size:14px;color:var(--muted);font-weight:500}
+.proj p{margin:0}
+.proj .tags{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px}
+.posts a{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.posts{border-top:1px solid var(--line)}
+.posts a:hover b{color:var(--accent)}
+.posts span{color:var(--muted);font-size:15px;white-space:nowrap}
+.contact{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+footer{margin-top:80px;border-top:1px solid var(--line);padding:24px 0 32px;color:var(--muted);font-size:14px}
+@media (max-width:760px){
+.brand-photo{width:52px;height:52px}
+.brand-text b{font-size:20px}
+.brand-text span{font-size:14px}
+.flow{flex-direction:column;gap:18px}
+.flow li:not(:last-child)::after{left:50%;top:100%;width:2px;height:18px;background:linear-gradient(180deg,var(--line) 35%,var(--pulse) 50%,var(--line) 65%) 0 0/100% 300%;animation-name:pulsev}
+@keyframes pulsev{to{background-position:0 -300%}}
+.stack div,.proj article{grid-template-columns:1fr}
+.posts a{flex-direction:column;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){.flow li::after{animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap"><div class="brand"><img class="brand-photo" src="./profile-photo.svg" alt="Temiloluwa Awoyele"><div class="brand-text"><b>Temiloluwa Awoyele</b><span>Data Platform Engineer · Data Engineer</span></div></div>
+<nav aria-label="Sections"><a href="#impact">Impact</a><a href="#stack">Stack</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#writing">Writing</a><a href="#contact">Contact</a></nav></div></header>
+
+<main class="wrap">
+<section class="hero">
+<h1>I build the data platforms telecom operations run on.</h1>
+<p>I’m Temiloluwa (Temmyzeus), a data engineer at Everlytics Data Science. I run production change-data-capture, streaming and warehouse pipelines for telecom and eSIM mediation systems. Based in Lagos, Nigeria.</p>
+<div class="btns"><a class="btn pri" href="#projects">See projects</a><a class="btn" href="#contact">Get in touch</a></div>
+<ol class="flow" aria-label="A typical pipeline I build">
+<li>Source databases<small>PostgreSQL, SQL Server</small></li>
+<li>Change capture<small>Debezium</small></li>
+<li>Streaming<small>Kafka</small></li>
+<li>Serving layer<small>Apache Doris, Snowflake</small></li>
+<li>Consumers<small>Dashboards, reconciliation</small></li>
+</ol>
+<p class="cap" style="margin:0">A typical path for the pipelines I run. Airflow schedules the batch work and OpenMetadata tracks quality along the way.</p>
+</section>
+
+<section id="impact">
+<h2>Impact</h2>
+<p class="lead">Each result states what changed, against what baseline, and how.</p>
+<div class="grid">
+<div class="card"><div class="fig"><span class="ph">[X] min</span> → <span class="ph">[Y] s</span></div><h3>Data freshness</h3><p>Replaced batch extracts with CDC streams into Apache Doris, so reports reflect source changes within seconds.</p></div>
+<div class="card"><div class="fig"><span class="ph">[N]</span> tables</div><h3>Covered by quality tests</h3><p>Automated OpenMetadata tests and suites, with business alerts that reach the owners of the data.</p></div>
+<div class="card"><div class="fig"><span class="ph">[N]%</span> fewer</div><h3>Manual reconciliations</h3><p>Automated checks across eSIM and telecom mediation data, replacing spreadsheet comparisons.</p></div>
+</div>
+</section>
+
+<section id="specialization">
+<h2>Specialization</h2>
+<p class="lead">Data platform engineering: the layer between operational systems and the people who need their data.</p>
+<div class="grid">
+<div class="card"><h3>Change data capture</h3><p>Debezium and Kafka pipelines from PostgreSQL and SQL Server, built to survive schema changes and replays.</p></div>
+<div class="card"><h3>Analytical serving</h3><p>Apache Doris and Snowflake models tuned for query speed, memory use and cost.</p></div>
+<div class="card"><h3>Data quality and governance</h3><p>Tests, alerts and lineage with OpenMetadata, wired into Airflow.</p></div>
+<div class="card"><h3>Platform and infrastructure</h3><p>Terraform on AWS, containerized services and CI through GitHub Actions.</p></div>
+</div>
+</section>
+
+<section id="stack">
+<h2>Tech stack</h2>
+<p class="lead">Grouped by the job each tool does in a pipeline.</p>
+<dl class="stack" style="margin:0">
+<div><dt>Ingest and stream</dt><dd><span class="chip">Kafka</span><span class="chip">Debezium</span><span class="chip">Spark</span><span class="chip">Python</span></dd></div>
+<div><dt>Store and serve</dt><dd><span class="chip">Apache Doris</span><span class="chip">Snowflake</span><span class="chip">PostgreSQL</span><span class="chip">SQL Server</span><span class="chip">S3</span></dd></div>
+<div><dt>Transform and orchestrate</dt><dd><span class="chip">dbt</span><span class="chip">SQLFluff</span><span class="chip">SQL</span><span class="chip">Airflow</span></dd></div>
+<div><dt>Platform</dt><dd><span class="chip">AWS: S3, Glue, EMR, ECS</span><span class="chip">Terraform</span><span class="chip">Docker</span><span class="chip">GitHub Actions</span></dd></div>
+<div><dt>Quality and metadata</dt><dd><span class="chip">OpenMetadata</span></dd></div>
+</dl>
+</section>
+
+<section id="experience">
+<h2>Experience</h2>
+<ol class="tl" style="margin-top:24px">
+<li><b>Senior Data Warehouse Engineer, Everlytics Data Science Pte Ltd</b><span><span class="ph">[Start year]</span> – present</span>Production pipelines for telecom and eSIM mediation: CDC, serving layer, data quality.</li>
+<li><b><span class="ph">[Role]</span>, Hash Analytics</b><span><span class="ph">[Years]</span></span><span class="ph">[One line on what you shipped]</span></li>
+<li><b><span class="ph">[Role]</span>, Divercity</b><span><span class="ph">[Years]</span></span><span class="ph">[One line on what you shipped]</span></li>
+</ol>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<p class="lead">Each one follows the same shape: problem, approach, result.</p>
+<div class="proj">
+<article><h3>CDC from PostgreSQL and SQL Server into Apache Doris</h3>
+<div><h4>Problem</h4><p>Operational data reached analysts through slow batch extracts.</p></div>
+<div><h4>Approach</h4><p>Debezium connectors publish row changes to Kafka; stream loads and tuned table DDL feed Doris.</p></div>
+<div><h4>Result</h4><p><span class="ph">[Latency, volume, or cost outcome]</span></p></div>
+<div><h4>Links</h4><p><a href="#">Write-up</a> · <a href="#">Source</a></p></div>
+<div class="tags"><span class="chip">Debezium</span><span class="chip">Kafka</span><span class="chip">Apache Doris</span></div></article>
+<article><h3>Data quality as code with OpenMetadata and Airflow</h3>
+<div><h4>Problem</h4><p>Bad data was found by users, after the fact.</p></div>
+<div><h4>Approach</h4><p>Table-level tests grouped into suites, with business alerts routed to data owners and runs scheduled in Airflow.</p></div>
+<div><h4>Result</h4><p><span class="ph">[Tables covered, incidents caught]</span></p></div>
+<div><h4>Links</h4><p><a href="#">Write-up</a></p></div>
+<div class="tags"><span class="chip">OpenMetadata</span><span class="chip">Airflow</span><span class="chip">Python</span></div></article>
+<article><h3>Telecom and eSIM mediation reconciliation</h3>
+<div><h4>Problem</h4><p>Usage records from several systems had to agree before billing.</p></div>
+<div><h4>Approach</h4><p>Lookup tables and automated reconciliation jobs that flag mismatches at the record level.</p></div>
+<div><h4>Result</h4><p><span class="ph">[Records reconciled, time saved]</span></p></div>
+<div><h4>Links</h4><p>Private repository. Architecture walkthrough on request.</p></div>
+<div class="tags"><span class="chip">SQL</span><span class="chip">Snowflake</span><span class="chip">Airflow</span></div></article>
+</div>
+</section>
+
+<section id="writing">
+<h2>Writing</h2>
+<p class="lead">Notes from building and debugging real pipelines.</p>
+<div class="posts">
+<a href="#"><b>Capturing changes from PostgreSQL and SQL Server with Debezium and Kafka</b><span>CDC · <span class="ph">[Date]</span></span></a>
+<a href="#"><b>Data quality tests that business teams can act on, with OpenMetadata</b><span>Data quality · <span class="ph">[Date]</span></span></a>
+<a href="#"><b>Linting a dbt project with SQLFluff without a warehouse connection</b><span>dbt · <span class="ph">[Date]</span></span></a>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p class="lead">Questions about pipeline design, collaboration, or a role: email is fastest.</p>
+<div class="contact">
+<button class="btn pri" id="copy" type="button">Copy email</button>
+<a class="btn" href="https://github.com/temmyzeus">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/your-handle">LinkedIn</a>
+<a class="btn" href="https://x.com/your-handle">X</a>
+<a class="btn" href="https://medium.com/@your-handle">Medium</a>
+</div>
+<p class="cap" id="mail" style="margin-top:14px" aria-live="polite">your-email@example.com</p>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Temiloluwa Awoyele. Lagos, Nigeria.</div></footer>
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+var m=document.getElementById('mail'),t=m.textContent,b=this;
+try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy email'},1800)},function(){m.textContent='Select and copy: '+t})}catch(e){m.textContent='Select and copy: '+t}
+});
+</script>
+</body>
+</html>
